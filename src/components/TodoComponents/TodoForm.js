@@ -1,18 +1,23 @@
-import React from 'react';
-//use props for functional components. .this for classes
-//cant use .state for functional 
 
-    const TodoForm = props => {
-        return (
-        <form onSubmit={(e) => props.handleChanges(e)} name='task'>       
-            <input onChange={props.onInputChange}
-            placeholder="Type here"
-            value={props.identity}
-            />
-            <input type='submit' value={props.value}  />
-            <button>Clear List</button>
-        </form>
-        );
-    };
+import React from 'react';
+import './Todo.css';
+
+const TodoForm = props => {
+return (
+<form onSubmit={props.addTask} className='form'>
+    <input
+    type="text"
+    value={props.name}
+    name="name"
+    onChange={props.handleChanges}
+    placeholder="Enter Task"
+    />
+    <div>
+    <button type="submit" >Add Task</button>
+    <button type="button" onClick={props.Clear}>Clear Finish Tasks</button>
+    </div>
+</form>
+);
+};
 
 export default TodoForm;

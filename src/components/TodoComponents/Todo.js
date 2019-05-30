@@ -1,10 +1,18 @@
-import React from 'react'
-import TodoList from './TodoList';
+    
+import React from 'react';
+import './Todo.css';
 
-function Todo(props){
-    return (
-        <p>{props.loop.task}</p>
-    )
+function List(props) {
+return (
+    <div className={`list-info${props.task.completed ? ' completed' : ''}`}>
+    <div >
+        <div>
+        <input type="radio" onClick={() => props.toggleTask(props.task.id)} />
+        <h3>{props.task.task}</h3>
+        </div>
+    </div>
+    </div>
+);
 }
 
-export default Todo;
+export default List;
